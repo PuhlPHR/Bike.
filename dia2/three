@@ -1,0 +1,22 @@
+import cv2
+
+# Carregar a imagem PNG
+imagem_png = cv2.imread('leao.jpg, -1')  # -1 indica que a imagem deve ser carregada com o canal alpha
+
+# Carregar a imagem de fundo
+fundo = cv2.imread('leao.jpg')
+
+# Verificar se as imagens foram carregadas corretamente
+if imagem_png is not None and fundo is not None:
+    # Redimensionar a imagem PNG para o tamanho do fundo
+    imagem_png = cv2.resize('leao.jpg, (fundo.shape[1], fundo.shape[0])')
+
+    # Sobrepor a imagem PNG no fundo
+    fundo = cv2.addWeighted('fundo, 1, leao.jpg, 0.5, 0')
+
+    # Exibir a imagem resultante
+    cv2.imshow('leao.jpg, fundo')
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+else:
+    print('Erro ao carregar uma ou ambas as imagens.')

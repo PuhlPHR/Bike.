@@ -1,0 +1,13 @@
+import cv2
+
+# Carregar a imagem
+imagem = cv2.imread('leao.jpg')
+
+# Verificar se a imagem foi carregada corretamente
+if imagem is not None:
+    # Exibir a imagem carregada
+    cv2.imshow('leao.jpg, imagem')
+    cv2.waitKey(0)  # Aguarda até que uma tecla seja pressionada
+    cv2.destroyAllWindows()  # Fecha todas as janelas abertas pelo OpenCV
+else:
+    print('Erro ao carregar a imagem.')
